@@ -49,3 +49,5 @@ Then run:
 3. Open `output/index.html` to see the analytics
 
 Check examples in `examples` directory. Get started with *simple-pizza* example!
+
+Charts are customizable by adding key `options` to dict which is returned by analysis method. For example all available options for pie chart is listed in [Google's documentation](https://developers.google.com/chart/interactive/docs/gallery/piechart#Configuration_Options).
