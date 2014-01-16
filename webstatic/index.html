@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Analysis</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+      // Auto-generated
+      window.analysis = JSON.parse('{{{resultsJson}}}')
+    </script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawAll);
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="center container">
+
+      <!-- Description of the whole analysis -->
+      <h1 class="main-header">{{header}}</h1>
+      <p class="main-description">{{description}}</p>
+
+      <!-- Render all results in this template -->
+      {{#results}}
+        <div id="{{name}}" class="result">
+          <a href="#{{name}}">{{header}}</a>
+          <p>{{description}}</p>
+          <div class="chart" id="chart_{{name}}"></div>
+        </div>
+      {{/results}}
+
+    </div>
+
+
+  </body>
+</html>

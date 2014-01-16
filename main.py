@@ -3,38 +3,55 @@
 """
 Parses google spreadsheet
 
-Usage: python analyze_study.py file.csv
+Usage: python main.py file.csv
 """
 
 import csv
-import cgi
-import sys
 import json
+import sys
+import shutil
+
+import pystache
+
+import lysis.utils as utils
+import lysis.path as path
+from youranalysis import Analysis
 
 
-class Analytics(object):
-    def __init__(self):
+def write_analysis(html):
+    with open(path.get_path('output/index.html'), 'w') as f:
+        f.write(html)
+
+
+def copy_static():
+    try:
+        shutil.rmtree(path.get_path('output'))
+    except OSError:
+        # Silently fail if output directory does not exist
         pass
 
-    def
-
-def find_
-
-
-def parse_row(row):
-    find
+    shutil.copytree(path.get_path('{static}'), 'output')
 
 
 def main():
-    results = []
-
-
     with open(sys.argv[1], 'rb') as csvfile:
         spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
-        for row in spamreader:
-            results.append(parse_row(row))
+        analysis = Analysis([row for row in spamreader])
 
-    print results
+    results = analysis.execute()
+    template = open(path.get_path('{static}/index.html')).read()
+
+    header, description = utils.split_analysis_doc(analysis.__doc__)
+
+    html = pystache.render(template, {
+        'results': results,
+        'resultsJson': json.dumps(results).replace("'", "\\'"),
+        'header': header,
+        'description': description
+    })
+
+    copy_static()
+    write_analysis(html)
 
 
 if __name__ == '__main__':

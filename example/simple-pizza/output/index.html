@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Analysis</title>
+
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300' rel='stylesheet' type='text/css'>
+    <link href="css/reset.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+
+    <script type="text/javascript">
+      // Auto-generated
+      window.analysis = JSON.parse('[{"header": "Pizza likers/haters ratio pie chart", "chart": "PieChart", "data": [["Answer", "Count"], ["Yes", 2], ["No", 2]], "name": "pizza_likers_haters_pie", "description": "Who likes pizza and who doesn\'t"}]')
+    </script>
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+    <script type="text/javascript" src="js/lodash.js"></script>
+    <script type="text/javascript" src="js/charts.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+    <script type="text/javascript">
+      // Load the Visualization API and the piechart package.
+      google.load('visualization', '1.0', {'packages':['corechart']});
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.setOnLoadCallback(drawAll);
+    </script>
+
+  </head>
+
+  <body>
+
+    <div class="center container">
+
+      <!-- Description of the whole analysis -->
+      <h1 class="main-header">Pizza survey</h1>
+      <p class="main-description">Opinions of pizza</p>
+
+      <!-- Render all results in this template -->
+        <div id="pizza_likers_haters_pie" class="result">
+          <a href="#pizza_likers_haters_pie">Pizza likers/haters ratio pie chart</a>
+          <p>Who likes pizza and who doesn't</p>
+          <div class="chart" id="chart_pizza_likers_haters_pie"></div>
+        </div>
+
+    </div>
+
+
+  </body>
+</html>
