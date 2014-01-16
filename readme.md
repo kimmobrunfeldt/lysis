@@ -1,8 +1,8 @@
 # Lysis
 
-Lysis offers simple way to create visual analysis from CSV file using [Google charts](https://developers.google.com/chart/). This tool was created to more easily analyze [Google Form's](https://support.google.com/drive/answer/87809) responses.
+*Lysis* offers simple way to create visual analysis from CSV file using [Google charts](https://developers.google.com/chart/). This tool was created to more easily visualize [Google Form's](https://support.google.com/drive/answer/87809) responses. Google offers a summary of responses, but it doesn't cover every aspect of answers.
 
-Lysis turns this
+*Lysis* turns this
 
 ```python
 class Analysis(analysis.Analysis):
@@ -34,7 +34,7 @@ It produces HTML file which will show all created charts.
 
 # Install
 
-First install Python and [pip](http://en.wikipedia.org/wiki/Pip_(package_manager)).
+First install Python and [pip](http://en.wikipedia.org/wiki/Pip_(package_manager\)).
 
 Then run:
 
