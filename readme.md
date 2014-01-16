@@ -48,4 +48,4 @@ Then run:
 
 3. Open `output/index.html` to see the analytics
 
-Check examples in `example` directory. Get started with *simple-pizza* example!
+Check examples in `examples` directory. Get started with *simple-pizza* example!
