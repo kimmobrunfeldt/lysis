@@ -32,7 +32,7 @@ To this:
 
 It produces HTML file which will show all charts created by analysis methods. You can use any [chart type that Google supports](https://developers.google.com/chart/interactive/docs/gallery). If want something else than charts, just customize render function.
 
-Template which produces the output is very minimal, it can easily be edited to suit your needs.
+[Template](https://github.com/kimmobrunfeldt/lysis/blob/master/webstatic/index.html#L34) which produces the output is very minimal, it can easily be edited to suit your needs.
 
 # Install
 
