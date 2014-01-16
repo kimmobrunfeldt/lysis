@@ -30,7 +30,7 @@ To this:
 
 ![Pizza survey](https://raw2.github.com/kimmobrunfeldt/lysis/master/doc/pizza.png)
 
-It produces HTML file which will show all created charts.
+It produces HTML file which will show all charts created by analysis methods.
 
 # Install
 
