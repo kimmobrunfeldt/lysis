@@ -14,18 +14,18 @@ First, all answers were gathered with Google Forms. Then the responses were impo
 
     Specifically, this method was added:
 
-        ```javascript
-        api.pizza_likers_haters_ratio = function(result) {
-            // Create the data table.
-            var data = google.visualization.arrayToDataTable(result.data);
+    ```javascript
+    api.pizza_likers_haters_ratio = function(result) {
+        // Create the data table.
+        var data = google.visualization.arrayToDataTable(result.data);
 
-            // Set chart options
-            var options = {};
+        // Set chart options
+        var options = {};
 
-            // Draw the chart
-            var chart = new google.visualization.PieChart($('#chart_' + result.name)[0]);
-            chart.draw(data, _.extend(defaultChartOptions, options));
-        };
-        ```
+        // Draw the chart
+        var chart = new google.visualization.PieChart($('#chart_' + result.name)[0]);
+        chart.draw(data, _.extend(defaultChartOptions, options));
+    };
+    ```
 
 4. Open `index.html`

@@ -4,31 +4,33 @@ Lysis offers simple way to create visual analysis from CSV file using [Google ch
 
 Lysis turns this
 
-    ```python
-    class Analysis(analysis.Analysis):
-        """Pizza survey
+```python
+class Analysis(analysis.Analysis):
+    """Pizza survey
 
-        Opinions of pizza
+    Opinions of pizza
+    """
+
+    @draw
+    def pizza_likers_haters_pie(self, rows):
+        """Pizza likers/haters ratio pie chart
+
+        Who likes pizza and who doesn't
         """
+        counter = Counter(row[1] for row in rows)
+        headers = [['Answer', 'Count']]
 
-        @draw
-        def pizza_likers_haters_pie(self, rows):
-            """Pizza likers/haters ratio pie chart
-
-            Who likes pizza and who doesn't
-            """
-            counter = Counter(row[1] for row in rows)
-            headers = [['Answer', 'Count']]
-
-            return {
-                'chart': 'PieChart',
-                'data': headers + [(x, y) for x, y in counter.items()]
-            }
-    ```
+        return {
+            'chart': 'PieChart',
+            'data': headers + [(x, y) for x, y in counter.items()]
+        }
+```
 
 To this:
 
-![Pizza survey](https://github.com/kimmobrunfeldt/lysis/raw/master/doc/img/pizza.png)
+![Pizza survey](https://raw2.github.com/kimmobrunfeldt/lysis/master/doc/pizza.png)
+
+It produces HTML file which will show all created charts.
 
 # Install
 
