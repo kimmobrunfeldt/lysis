@@ -8,7 +8,7 @@ var defaultChartOptions = {
     titleTextStyle: {
         bold: false
     },
-    height: 300
+    height: 400
 };
 
 function drawOne(result) {
