@@ -20,6 +20,8 @@ from youranalysis import Analysis
 
 def write_analysis(html):
     with open(path.get_path('output/index.html'), 'w') as f:
+        if isinstance(html, unicode):
+            html = html.encode('utf-8')
         f.write(html)
 
 
@@ -39,7 +41,7 @@ def main():
         analysis = Analysis([row for row in spamreader])
 
     results = analysis.execute()
-    template = open(path.get_path('{static}/index.html')).read()
+    template = open(path.get_path('{static}/index.html')).read().decode('utf-8')
 
     header, description = utils.split_analysis_doc(analysis.__doc__)
 

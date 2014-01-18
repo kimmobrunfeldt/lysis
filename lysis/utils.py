@@ -39,4 +39,4 @@ def split_analysis_doc(doc):
     header = doc[0].strip()
     description = '' if len(doc) < 2 else doc[1].strip()
 
-    return header, description
+    return header.decode('utf-8'), description.decode('utf-8')
