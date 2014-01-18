@@ -35,6 +35,11 @@ def copy_static():
     shutil.copytree(path.get_path('{static}'), 'output')
 
 
+def fix_json(json_string):
+    """Hacky way to fix json string given to javascript"""
+    return json_string.replace("'", "\\'").replace('\\n','').replace('\\r', '')
+
+
 def main():
     with open(sys.argv[1], 'rb') as csvfile:
         spamreader = csv.reader(
@@ -52,7 +57,7 @@ def main():
 
     html = pystache.render(template, {
         'results': results,
-        'resultsJson': json.dumps(results).replace("'", "\\'"),
+        'resultsJson': fix_json(json.dumps(results)),
         'header': header,
         'description': description
     })
