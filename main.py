@@ -6,7 +6,7 @@ Parses google spreadsheet
 Usage: python main.py file.csv
 """
 
-import csv
+import unicodecsv as csv
 import json
 import sys
 import shutil
@@ -37,7 +37,12 @@ def copy_static():
 
 def main():
     with open(sys.argv[1], 'rb') as csvfile:
-        spamreader = csv.reader(csvfile, delimiter=',', quotechar='"')
+        spamreader = csv.reader(
+            csvfile,
+            encoding='utf-8',
+            delimiter=',',
+            quotechar='"'
+        )
         analysis = Analysis([row for row in spamreader])
 
     results = analysis.execute()
