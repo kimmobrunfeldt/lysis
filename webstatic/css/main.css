@@ -54,6 +54,11 @@ body, html {
     margin: 20px auto 0 auto;
 }
 
+.result .description {
+    width: 700px;
+    line-height: 1.2em;
+}
+
 .result a {
     font-size: 24px;
     text-decoration: none;
