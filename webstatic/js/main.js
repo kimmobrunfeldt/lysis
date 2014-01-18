@@ -19,7 +19,7 @@ function drawOne(result) {
     var chart = new google.visualization[result.chart]($('#chart_' + result.name)[0]);
 
     var options = _.has(result, 'options') ? result.options : {};
-    chart.draw(data, _.extend(defaultChartOptions, options));
+    chart.draw(data, _.extend(_.clone(defaultChartOptions), options));
 }
 
 function drawAll(resultData) {
