@@ -30,15 +30,13 @@ class Analysis(object):
 
     def execute(self):
         results = []
-        methods = utils.get_methods(self,
-            sort_key=lambda obj: getattr(obj, 'order', None)
-        )
+
+        # Find all methods which have draw attribute and sort based on order
+        methods = utils.get_methods(self)
         methods = [(x, y) for x, y in methods if getattr(y, 'draw', False)]
+        methods.sort(key=lambda t: t[1].order)
 
-        sorted_methods = [x for x in methods if x is not None]
-        sorted_methods += [x for x in methods if x is None]
-
-        for name, function in sorted_methods:
+        for name, function in methods:
 
             header, description = utils.split_analysis_doc(function.__doc__)
 
